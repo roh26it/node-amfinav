@@ -1,4 +1,4 @@
-var http = require('http');
+var https = require('https');
 var events = require('events');
 
 var amfiHost = "portal.amfiindia.com"; //changed on 19 Oct 2013
@@ -48,7 +48,7 @@ function acquireData () {
 	var self = this;
 	self.status = 'Acquiring Data';
 	console.log(self.status);
-	http.request({host: amfiHost, path: amfiPath}, function(response) {
+	https.request({host: amfiHost, path: amfiPath}, function(response) {
 		  var str = '';
 
 		  response.on('error', function (chunk) {
